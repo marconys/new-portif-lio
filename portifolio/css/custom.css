@@ -9,11 +9,11 @@
 
 :root {
   --main-color: #1d2c49;
-  --site-color: #fff;
+  --light-color: #fff;
 }
 
 body {
-  background-color: var(--site-color);
+  background-color: var(--light-color);
   color: var(--main-color);
   background-image: linear-gradient(
     45deg,
@@ -50,7 +50,7 @@ body {
 }
 
 .header-area .navbar .logo a {
-  color: var(--site-color);
+  color: var(--light-color);
   font-size: 35px;
   font-weight: 500;
 }
@@ -80,6 +80,7 @@ body {
 
 .header-area .navbar .menu li {
   list-style: none;
+  cursor: pointer;
   display: inline-block;
   padding-top: 10px;
 }
@@ -87,7 +88,7 @@ body {
 .header-area .navbar .menu li a {
   text-decoration: none;
   display: block;
-  color: var(--site-color);
+  color: var(--light-color);
   font-size: 18px;
   font-weight: 400;
   margin-left: 25px;
@@ -103,11 +104,11 @@ body {
 }
 
 .header-area .navbar .social-media a {  
-  color: var(--site-color);
+  color: var(--light-color);
 }
 
 .menu-btn {
-  color: var(--site-color);
+  color: var(--light-color);
   font-size: 23px;
   cursor: pointer;
   display: none;
@@ -136,7 +137,7 @@ body {
     left: 0;
   }
   .header-area .navbar .menu li {
-    display: block;
+    display: block;    
   }
   .header-area .navbar .menu li a {
     display: inline-block;
@@ -191,27 +192,31 @@ body {
 
 @media (max-width: 947px) {
   .welcome {
-    max-width: 90%;
     padding-top: 200px;
     height: 100%;
     margin: 50px auto;
   }
 
   .welcome h1 {
-    display: none;
+    font-size: 1em;    
+    text-align: center;
+
   }
 
   .title-one {
-    display: none;
+    padding-top: 60px;
+    font-size: 2em;
+    text-align: center;
   }
 
   .title-two {
-    display: none;
+    font-size: 2em;
+    text-align: center;
   }
 }
-/* fim welcome */
+/* welcome end*/
 
-/* inicio projects */
+/* projects start */
 .projects {
   max-width: 90%;
   padding-top: 200px;
@@ -246,4 +251,143 @@ body {
   text-align: justify;
 }
 
-/* fim projects */
+@media (max-width: 947px) {
+  .projects {
+    max-width: 90%;
+    padding-top: 200px;
+    height: 100%;
+    margin: 50px auto;
+  }
+
+  .projects img {
+    max-width: 90%;
+  }
+
+}
+
+/* projects end */
+
+/* footer start */
+
+.baseboard {
+  background: var(--main-color);
+  padding: 25px 23px;
+  color: var(--light-color);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.baseboard p span a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.baseboard p span a:hover {
+  color: var(--light-color);
+}
+
+@media (max-width: 947px) {
+  .baseboard p {
+    font-size: 10px;
+  }
+
+}
+
+/* footer end */
+
+/* popup start */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.popup-content h3{
+  color: var(--main-color);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.popup-contact {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.popup-contact .contact{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.popup-contact .contact img {
+  width: 70px;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 947px) {
+
+  #popup {
+    width: 90%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  .popup-content h3{
+    font-size: 18px;
+  }
+  
+  .popup-contact {
+    font-size: 10px;
+  }
+
+  .popup-contact .contact {
+    width: 80%;
+  }
+
+  .popup-contact .contact img {
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .popup-contact .contact h4{
+    font-size: 18px;
+  }
+
+}
+
+/* popup end */
