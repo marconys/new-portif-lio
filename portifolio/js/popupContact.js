@@ -1,5 +1,8 @@
-// Função para abrir o popup
+// Função para fechar menu trigger e abrir o popup
 function abrirPopup() {
+    document.querySelector('#menu-site').classList.remove("active");
+    document.querySelector('#menu-icon').classList.remove("active");
+
     document.getElementById('popup').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
 }
