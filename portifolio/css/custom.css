@@ -4,12 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;  
+  text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
 
 :root {
   --main-color: #1d2c49;
+  --primmary-color: #673dff;
   --light-color: #fff;
 }
 
@@ -33,19 +34,15 @@ html {
 }
 
 ::-webkit-scrollbar {
-
   background-color: rgba(0, 0, 0, 0.753);
 
   width: 10px;
-
 }
 
 ::-webkit-scrollbar-thumb {
-
   background-color: var(--main-color);
 
   border-radius: 25px;
-
 }
 
 /* header  start*/
@@ -64,7 +61,7 @@ html {
   transition: all 0.3s ease 0s;
 }
 
-.header-area .max-width {
+.header-area .container {
   max-width: 80%;
   padding: 0 10px;
   margin: auto;
@@ -91,8 +88,8 @@ html {
   background-color: var(--main-color);
 }
 
-.header-area .navbar .max-width {
-  width: 100%;
+.header-area .navbar .container {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,7 +99,7 @@ html {
   list-style: none;
   cursor: pointer;
   display: inline-block;
-  padding-top: 10px;
+  padding-top: 0px; 
 }
 
 .header-area .navbar .menu li a {
@@ -111,7 +108,12 @@ html {
   color: var(--light-color);
   font-size: 18px;
   font-weight: 400;
-  margin-left: 25px;
+  margin-left: 25px;   
+  transition: transform 0.3s ease;
+}
+
+.header-area .navbar .menu li a:hover {
+  transform: scale(1.2);
 }
 
 .header-area .navbar .social-media {
@@ -125,6 +127,11 @@ html {
 
 .header-area .navbar .social-media a {
   color: var(--light-color);
+  transition: transform 0.3s ease;
+}
+
+.header-area .navbar .social-media a:hover {
+  transform: scale(1.2);
 }
 
 .menu-btn {
@@ -135,6 +142,10 @@ html {
 }
 
 @media (max-width: 947px) {
+
+  .header-area .navbar {
+    width: 80%;
+  }
   .logo,
   .social-media {
     z-index: 1000;
@@ -152,18 +163,19 @@ html {
     position: fixed;
     height: 50vh;
     width: 80vw;
-    left: -150%;
-    top: 0;
+    top: -100vh;
+    left: 0;
     text-align: center;
     padding-top: 80px;
     transition: all 0.3s ease;
   }
   #menu-site.active {
-    left: 0;
+    top: 0;
   }
   .header-area .navbar .menu li {
     display: block;
   }
+
   .header-area .navbar .menu li a {
     display: inline-block;
     margin: 13px 0;
@@ -240,39 +252,79 @@ html {
   margin: 50px auto;
 }
 
-.projects h1 {
+.projects .container h1 {
   color: var(--main-color);
   font-weight: bold;
   font-size: 4em;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.projects img {
+.container .row-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.row-cards .card {
+  width: calc(50% - 20px);
+  background: var(--first-color);
+  align-items: center;
+  text-align: center;
+  padding: 50px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.row-cards .card img {
   max-width: 600px;
+  transition: transform 0.3s ease;
 }
 
-.projects h3 a {
-  text-decoration: none;
+.row-cards .card img:hover {
+  transform: scale(1.05);
+
+}
+
+.row-cards .card .card-content {
+  margin: auto;
+  width: 70%;
+}
+
+.row-cards .card .card-content h3 {
+  color: var(--primmary-color);
+}
+
+.row-cards .card .card-content h3 a {
+  color: var(--primmary-color);
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-.projects h3 a:hover {
+.card .card-content h3 a:hover {
   color: var(--main-color);
 }
 
-.projects p {
+.card .card-content p {
   font-size: 20px;
   text-align: justify;
 }
 
 @media (max-width: 947px) {
-  .projects {
-    max-width: 90%;
-    padding-top: 200px;
+  .projects .container .row-cards .card {
+    width: calc(100% - 20px);
+    padding: 50px 25px;
     height: 100%;
-    margin: 50px auto;
+    margin: auto;
   }
 
-  .projects img {
+  .row-cards .card .card-content {
+    margin: auto;
+    width: 100%;
+  }
+
+  .row-cards .card img {
     max-width: 90%;
   }
 }
@@ -331,8 +383,9 @@ html {
   z-index: 1;
 }
 
-.popup-content h3 {
+.popup-content h2 {
   color: var(--main-color);
+  padding: 20px;
   text-align: center;
   font-weight: 600;
 }
@@ -345,18 +398,26 @@ html {
 
 .popup-contact .contact {
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.popup-contact .contact:hover {
+  transform: scale(1.2);
 }
 
 .popup-contact .contact img {
   width: 70px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .close {
   position: absolute;
-  top: 10px;
+  padding: auto;
+  top: 0;
   right: 10px;
   cursor: pointer;
+  font-size: 1.5em;
 }
 
 @media (max-width: 947px) {
@@ -455,15 +516,18 @@ html {
   transition: all 2s;
 }
 
-.row :nth-child(2) {
+.row-cards :nth-child(2) {
+  transition: all 2s;
   transition-delay: 1s;
 }
 
-.row :nth-child(3) {
+.row-cards :nth-child(3) {
+  transition: all 2s;
   transition-delay: 1.5s;
 }
 
-.row :nth-child(4) {
+.row-cards :nth-child(4) {
+  transition: all 2s;
   transition-delay: 2s;
 }
 
@@ -524,15 +588,18 @@ html {
     transition: all 2s;
   }
   
-  .row :nth-child(2) {
+  .row-cards :nth-child(2) {
+    transition: all 2s;
     transition-delay: 800ms;
   }
   
-  .row :nth-child(3) {
+  .row-cards :nth-child(3) {
+    transition: all 2s;
     transition-delay: 1.2ms;
   }
   
-  .row :nth-child(4) {
+  .row-cards :nth-child(4) {
+    transition: all 2s;
     transition-delay: 1.6s;
   }
 }
