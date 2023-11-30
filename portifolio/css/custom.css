@@ -11,6 +11,7 @@
 :root {
   --main-color: #1d2c49;
   --primmary-color: #673dff;
+  --secundary-color: #cccdcc;
   --light-color: #fff;
 }
 
@@ -125,6 +126,7 @@ html {
 @media (max-width: 947px) {
   .header-area .navbar .logo {
     z-index: 1000;
+    margin-left: -25px;
   }
   #menu {
     display: flex;
@@ -145,18 +147,19 @@ html {
   .navbar.active #menu {
     align-items: center;
     text-align: center;
-    height: calc(50vh - 70px);
+    height: calc(35vh - 70px);
     border-radius: 50px;
     visibility: visible;
   }
   #menu a {
     padding: 1rem 0;
     margin: 0 1rem;
-    border-bottom: 2px solid rgba(187, 184, 184, 0.05);
+    border-bottom: 2px solid var(--secundary-color);
   }
   #btn-mobile {
     display: flex;
     padding: 0.5rem 1rem;
+    margin-right: -25px;
     font-size: 1rem;
     border: none;
     background: none;
@@ -168,11 +171,20 @@ html {
     border-top: 2px solid;
     width: 20px;
   }
-  #hamburger::after,
-  #hamburger::before {
+  #hamburger::after {
     content: '';
     display: block;
     width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 25px;
     height: 2px;
     background: currentColor;
     margin-top: 5px;
@@ -183,6 +195,7 @@ html {
     border-top-color: transparent;
   }
   .navbar.active #hamburger::before {
+    width: 20px;
     transform: rotate(135deg);
   }
   .navbar.active #hamburger::after {
@@ -384,9 +397,9 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f9f9f9;
+  background-color: var(--light-color);
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--secundary-color);
   border-radius: 10px;
   z-index: 1;
 }
@@ -436,9 +449,9 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
+    background-color: var(--light-color);
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secundary-color);
     border-radius: 10px;
     z-index: 1;
   }
