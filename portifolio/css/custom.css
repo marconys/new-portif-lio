@@ -245,7 +245,7 @@ html {
   .welcome {
     padding-top: 200px;
     height: 100%;
-    margin: 50px auto;
+    margin: 100px auto;
   }
 
   .welcome h1 {
@@ -274,7 +274,7 @@ html {
   max-width: 90%;
   padding-top: 200px;
   height: 100%;
-  margin: 50px auto;
+  margin: 150px auto;
 }
 
 .projects .container h1 {
